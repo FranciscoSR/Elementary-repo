@@ -34,7 +34,7 @@ RDEPEND="${DEPEND}
 src_prepare() {
 	eapply_user
 	epatch "${FILESDIR}/0.3.6-desktop_name.patch"
-	vala_src_prepare --vala-api-version 0.40
+	vala_src_prepare --vala-api-version 0.42
 }
 
 pkg_preinst() {
