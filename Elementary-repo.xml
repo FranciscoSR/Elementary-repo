@@ -9,5 +9,8 @@
 			<email>fransaavedrarivera@gmail.com</email>
 		</owner>
 		<source type="git">https://github.com/FranciscoSR/Elementary-repo.git</source>
+		<source type="git">git://github.com/FranciscoSR/Elementary-repo.git</source>
+        	<source type="git">git@github.com:FranciscoSR/Elementary-repo.git</source>
+		<feed>https://github.com/FranciscoSR/Elementary-repo/commits/master.atom</feed>
 	</repo>
 </repositories> 
