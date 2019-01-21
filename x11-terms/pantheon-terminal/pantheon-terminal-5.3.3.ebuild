@@ -35,7 +35,7 @@ S="${WORKDIR}/terminal-${PV}"
 
 src_prepare() {
 	eapply_user
-	vala_src_prepare --vala-api-version 0.40
+	vala_src_prepare --vala-api-version 0.42
 }
 
 src_configure() {

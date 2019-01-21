@@ -40,7 +40,7 @@ S="${WORKDIR}/calendar-${PV}"
 
 src_prepare() {
 	default
-	vala_src_prepare --vala-api-version 0.40
+	vala_src_prepare --vala-api-version 0.42
 }
 
 pkg_preinst() {
