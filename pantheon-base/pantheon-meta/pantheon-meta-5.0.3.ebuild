@@ -46,7 +46,6 @@ RDEPEND="${DEPEND}
 	pantheon-base/switchboard-plug-mouse-touchpad
 	pantheon-base/switchboard-plug-notifications
 	pantheon-base/switchboard-plug-pantheon-shell
-	pantheon-base/switchboard-plug-parental-controls
 	pantheon-base/switchboard-plug-security-privacy
 	pantheon-base/switchboard-plug-sharing
 	pantheon-base/switchboard-plug-useraccounts
