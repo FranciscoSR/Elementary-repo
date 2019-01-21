@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+
+<repositories version="1.0">
+	<repo priority="50" quality="experimental" status="unofficial">
+		<name>Elementary-repo</name>
+		<description>Elementar repostory.</description>
+		<homepage>https://github.com/FranciscoSR/Elementary-repo</homepage>
+		<owner>
+			<email>fransaavedrarivera@gmail.com</email>
+		</owner>
+		<source type="git">https://github.com/FranciscoSR/Elementary-repo.git</source>
+	</repo>
+</repositories> 
