@@ -5,7 +5,7 @@ EAPI=6
 
 VALA_MIN_VERSION=0.22
 
-inherit git-r3 gnome2-utils vala
+inherit git-r3 gnome2-utils meson vala
 
 DESCRIPTION="Accessibility indicator for Wingpanel"
 HOMEPAGE="https://github.com/elementary/wingpanel-indicator-a11y"
