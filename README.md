@@ -1,12 +1,11 @@
-Unofficial GNOME overlay
+Unofficial Another Elementary overlay based on the Gnome-next repository with own modifications.
+
 [![Build Status](https://travis-ci.org/Heather/gentoo-gnome.png?branch=master)](https://travis-ci.org/Heather/gentoo-gnome)
-[![Twitter][]](http://www.twitter.com/Cynede)
 ------------------------
 
 Versions
 --------
 
- - GNOME `3.31.x`
  - Pantheon `Juno` ebuilds
 
 Communication
@@ -69,29 +68,6 @@ xrdb merge ~/.Xresources &&
 wingpanel &
 plank &
 exec gala
-```
-
-Autostarting Plank in GNOME
----------------------------
-
-add `/usr/share/gnome/autostart/plank.desktop`
-```
-[Desktop Entry]
-Type=Application
-Name=Plank
-Comment=Plank panel
-Exec=/usr/bin/plank
-OnlyShowIn=GNOME;
-X-GNOME-Autostart-Phase=Application
-```
-
-Likewise, `conky -d` can be added.
-
-Branches
---------
-
- - `stable` branch was targeting `Sabayon 14.01`
- - `3.16` branch is saved old master
- - `master` branch is for newer stuff based on portage
+e
 
 [Twitter]: http://mxtoolbox.com/Public/images/twitter-icon.png
