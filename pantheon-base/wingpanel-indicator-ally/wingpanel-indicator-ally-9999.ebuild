@@ -5,7 +5,7 @@ EAPI=6
 
 VALA_MIN_VERSION=0.22
 
-inherit cmake-utils git-r3 gnome2-utils vala
+inherit git-r3 gnome2-utils vala
 
 DESCRIPTION="Accessibility indicator for Wingpanel"
 HOMEPAGE="https://github.com/elementary/wingpanel-indicator-a11y"
@@ -31,17 +31,8 @@ src_prepare() {
 	eapply_user
 
 	vala_src_prepare
-	cmake-utils_src_prepare
 }
 
-
-src_configure() {
-	mycmakeargs=(
-		-DVALA_EXECUTABLE=${VALAC}
-	)
-
-	cmake-utils_src_configure
-}
 
 pkg_preinst() {
 	gnome2_schemas_savelist
