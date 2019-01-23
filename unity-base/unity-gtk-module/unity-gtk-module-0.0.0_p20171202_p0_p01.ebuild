@@ -10,7 +10,7 @@ UVER_PREFIX="+${UVER_RELEASE}.${PVR_MICRO}"
 
 DESCRIPTION="GTK+ module for exporting old-style menus as GMenuModels"
 HOMEPAGE="https://launchpad.net/unity-gtk-module"
-SRC_URI="${UURL}/${MY_P}${UVER_PREFIX}.orig.tar.gz"
+SRC_URI="https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/unity-gtk-module/0.0.0+18.04.20171202-0ubuntu1/unity-gtk-module_0.0.0+18.04.20171202.orig.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
