@@ -17,7 +17,7 @@ KEYWORDS="amd64 ~x86"
 IUSE="nls plugins docs"
 
 DEPEND="
-	>=dev-lang/vala-0.40
+	>=dev-lang/vala-0.42
 	dev-util/intltool
 	nls? ( sys-devel/gettext )
 	virtual/pkgconfig

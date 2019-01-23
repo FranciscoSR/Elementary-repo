@@ -17,7 +17,7 @@ KEYWORDS="amd64 ~x86"
 IUSE="nls plugins zeitgeist"
 
 DEPEND="
-	>=dev-lang/vala-0.40
+	>=dev-lang/vala-0.42
 	nls? ( sys-devel/gettext )
 	virtual/pkgconfig
 "
