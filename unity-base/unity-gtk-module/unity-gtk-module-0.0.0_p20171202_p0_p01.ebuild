@@ -1,36 +1,36 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI=5
+EAPI=6
 PYTHON_COMPAT=( python2_7 )
 
-inherit autotools eutils python-r1 versionator bzr
+URELEASE="bionic"
+inherit autotools eutils python-r1
+UVER_PREFIX="+${UVER_RELEASE}.${PVR_MICRO}"
 
 DESCRIPTION="GTK+ module for exporting old-style menus as GMenuModels"
 HOMEPAGE="https://launchpad.net/unity-gtk-module"
-EBZR_REPO_URI="lp:unity-gtk-module"
+SRC_URI="${UURL}/${MY_P}${UVER_PREFIX}.orig.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-#KEYWORDS="~x86 ~amd64"
+KEYWORDS="~x86 ~amd64"
 IUSE=""
 RESTRICT="mirror"
 
-RDEPEND="dev-libs/libdbusmenu:=[gtk3]"
-DEPEND="${RDEPEND}
-	>=dev-libs/glib-2.38
+DEPEND="dev-libs/glib:2
+	dev-libs/libdbusmenu:=[gtk3]
 	x11-libs/libX11
 	x11-libs/gtk+:2
 	x11-libs/gtk+:3
 	!x11-misc/appmenu-gtk"
 
-pkg_setup() {
-	python_export_best
-}
+S="${WORKDIR}"
 
 src_prepare() {
-	epatch "${FILESDIR}/${PN}-gsettings.patch"
+	epatch "${FILESDIR}/unity-gtk-module-0.0.0+14.04-deprecated-api.patch"
+	sed -e 's/ubuntu-session/unity-session/g' \
+		-i data/unity-gtk-module.service
 	eautoreconf
 }
 
@@ -39,6 +39,7 @@ src_configure() {
 	[[ -d build-gtk2 ]] || mkdir build-gtk2
 	pushd build-gtk2
 		../configure --prefix=/usr \
+			--libdir=/usr/$(get_libdir) \
 			--sysconfdir=/etc \
 			--disable-static \
 			--with-gtk=2 || die
@@ -48,6 +49,7 @@ src_configure() {
 	[[ -d build-gtk3 ]] || mkdir build-gtk3
 	pushd build-gtk3
 		../configure --prefix=/usr \
+		--libdir=/usr/$(get_libdir) \
 		--sysconfdir=/etc \
 		--disable-static || die
 	popd
@@ -75,13 +77,6 @@ src_install() {
 	pushd build-gtk3
 		emake DESTDIR="${D}" install || die
 	popd
-
-	rm -rf "${D}etc" &> /dev/null
-	exeinto /etc/X11/xinit/xinitrc.d/
-	doexe "${FILESDIR}/81unity-gtk-module"
-
-	# Remove upstart jobs as we use xsession based scripts in /etc/X11/xinit/xinitrc.d/ #
-	rm -rf "${ED}usr/share/upstart"
 
 	prune_libtool_files --modules
 }
