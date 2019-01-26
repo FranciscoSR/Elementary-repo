@@ -4,7 +4,6 @@
 EAPI=6
 
 VALA_MIN_API_VERSION=0.40
-PYTHON_COMPAT=( python2_7 )
 
 inherit gnome2-utils meson vala xdg-utils
 
@@ -14,7 +13,6 @@ SRC_URI="https://github.com/babluboy/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-
 
 DEPEND="
 	>=dev-lang/vala-0.42
