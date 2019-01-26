@@ -1,4 +1,5 @@
 Unofficial Another Elementary overlay based on the Gnome-next repository with own modifications.
+This repo 
 
 [![Build Status](https://travis-ci.org/Heather/gentoo-gnome.png?branch=master)](https://travis-ci.org/Heather/gentoo-gnome)
 ------------------------
@@ -37,7 +38,7 @@ full installation:
  - pantheon-meta
  - USE="minimal" excludes elementary-apps (default +minimal)
  - bluetooth the section is not checked
- - switchboard-plug-locale the plugin is tied to the Ubuntu. ideally, it should be rewritten. It's useless now
+ - switchboard-plug-notifications the plugin is tied to the Ubuntu. ideally, it should be rewritten. It's useless now
  - switchboard-plug-useraccounts a little unfinished. it is tied to the accountsservice with patches from Debian. But these patches are not yet in gentoo.
 
 (Dirli's cooment: below is written by someone else, left it, suddenly someone come in handy)
@@ -48,7 +49,7 @@ Here is an example `.xinitrc`:
 ``` shell
 #!/bin/sh
 if [ -d /etc/X11/xinit/xinitrc.d ]; then
-  for f in /etc/X11/xinit/xinitrc.d/*; do
+  for f in /etc/X11/xinit/xinitrc.d/; do
     [ -x "$f" ] && . "$f"
   done
   unset f
