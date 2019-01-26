@@ -7,7 +7,7 @@ VALA_MIN_API_VERSION="0.26"
 VALA_USE_DEPEND="vapigen"
 PYTHON_COMPAT=( python2_7 )
 
-inherit vala cmake-utils python-r1 gnome2
+inherit gnome2-utils meson vala xdg-utils python-r1 
 
 DESCRIPTION="A simple ebook reader originally intended for Elementary OS"
 HOMEPAGE="http://babluboy.github.io/bookworm"
@@ -17,8 +17,13 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 DEPEND="
-	${PYTHON_DEPS}
-	$(vala_depend)
+	>=dev-lang/vala-0.42
+	nls? ( sys-devel/gettext )
+	virtual/pkgconfig
+"
+
+
+RDEPEND="${DEPEND}
 	dev-libs/granite
 	app-text/poppler[cairo]
 	app-arch/unzip
@@ -28,29 +33,34 @@ DEPEND="
 	dev-db/sqlite:3
 	dev-python/html2text[${PYTHON_USEDEP}]
 "
-RDEPEND="${DEPEND}"
+
+S="${WORKDIR}/bookworm-${PV}"
 
 src_prepare(){
-	export VALAC="$(type -p valac-$(vala_best_api_version))"
-	DOCS="AUTHORS"
-	cmake-utils_src_prepare
+	eapply_user
+	vala_src_prepare --vala-api-version 0.42
 }
 
 src_configure(){
 
-	cmake-utils_src_configure
+	meson_src_configure
 }
 
 pkg_preinst(){
+	gnome2_icon_savelist
 	gnome2_schemas_savelist
 }
 
 pkg_postinst(){
 	gnome2_gconf_install
+	gnome2_icon_cache_update
 	gnome2_schemas_update
+	xdg_desktop_database_update
 }
 
 pkg_postrm(){
 	gnome2_gconf_uninstall
+	gnome2_icon_cache_update
 	gnome2_schemas_update
+	xdg_desktop_database_update
 }
