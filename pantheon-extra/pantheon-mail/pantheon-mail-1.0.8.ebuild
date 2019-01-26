@@ -19,8 +19,10 @@ IUSE="nls"
 RDEPEND="
 	x11-libs/gtk+:3"
 DEPEND="${RDEPEND}
-	$(vala_depend)"
-
+	$(vala_depend)
+	nls? ( sys-devel/gettext )
+	virtual/pkgconfig
+"
 
 
 src_prepare() {
