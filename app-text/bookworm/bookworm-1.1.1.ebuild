@@ -38,11 +38,7 @@ src_prepare(){
 }
 
 src_configure(){
-	local mycmakeargs=(
-		"-DICON_UPDATE=OFF"
-		"-DGSETTINGS_COMPILE=yes"
-		"-DUSE_VALA_BINARY=$(type -p valac-$(vala_best_api_version))"
-	)
+
 	cmake-utils_src_configure
 }
 
