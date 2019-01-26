@@ -41,10 +41,6 @@ src_prepare(){
 	vala_src_prepare --vala-api-version 0.42
 }
 
-src_configure(){
-
-	meson_src_configure
-}
 
 pkg_preinst(){
 	gnome2_icon_savelist
