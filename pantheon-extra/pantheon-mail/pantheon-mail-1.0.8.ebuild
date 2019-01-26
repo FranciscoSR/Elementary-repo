@@ -16,22 +16,12 @@ LICENSE="GPL-3"
 SLOT="0"
 IUSE="nls"
 
-DEPEND="
-	$(vala_depend)
-	nls? ( sys-devel/gettext )
-	virtual/pkgconfig
-"
-
-RDEPEND="${DEPEND}
-	dev-libs/glib:2
-	dev-libs/granite
-	media-libs/libcanberra
-	x11-libs/gdk-pixbuf:2
-	x11-libs/gtk+:3
-"
+RDEPEND="
+	x11-libs/gtk+:3"
+DEPEND="${RDEPEND}
+	$(vala_depend)"
 
 
-S=${WORKDIR}/mail-${PV}
 
 src_prepare() {
 	eapply_user
@@ -51,3 +41,4 @@ pkg_postinst() {
 pkg_postrm() {
 	gnome2_icon_cache_update
 	gnome2_schemas_update
+}
