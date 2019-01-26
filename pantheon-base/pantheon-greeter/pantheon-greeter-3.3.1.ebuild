@@ -5,7 +5,7 @@ EAPI=6
 
 VALA_MIN_API_VERSION=0.42
 
-inherit gnome2-utils vala cmake-utils
+inherit gnome2-utils meson vala 
 
 DESCRIPTION="Pantheon Login Screen for LightDM"
 HOMEPAGE="https://github.com/elementary/greeter"
