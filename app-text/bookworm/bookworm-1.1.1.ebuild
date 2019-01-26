@@ -14,11 +14,7 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND="
-	>=dev-lang/vala-0.42
-	virtual/pkgconfig
-"
-
+DEPEND=">=dev-lang/vala-0.42"
 
 RDEPEND="${DEPEND}
 	dev-libs/granite
