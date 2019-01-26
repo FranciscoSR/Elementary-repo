@@ -24,6 +24,7 @@ DEPEND="${RDEPEND}
 	virtual/pkgconfig
 "
 
+S="${WORKDIR}/mail-${PV}"
 
 src_prepare() {
 	eapply_user
