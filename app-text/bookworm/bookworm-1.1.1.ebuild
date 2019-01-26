@@ -4,7 +4,6 @@
 EAPI=6
 
 VALA_MIN_API_VERSION="0.26"
-VALA_USE_DEPEND="vapigen"
 PYTHON_COMPAT=( python2_7 )
 
 inherit gnome2-utils meson vala xdg-utils python-r1 
@@ -15,6 +14,7 @@ SRC_URI="https://github.com/babluboy/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
+IUSE="nls"
 
 DEPEND="
 	>=dev-lang/vala-0.42
