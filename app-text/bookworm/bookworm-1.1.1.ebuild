@@ -3,10 +3,10 @@
 
 EAPI=6
 
-VALA_MIN_API_VERSION="0.26"
+VALA_MIN_API_VERSION=0.40
 PYTHON_COMPAT=( python2_7 )
 
-inherit gnome2-utils meson vala xdg-utils python-r1 
+inherit gnome2-utils meson vala xdg-utils
 
 DESCRIPTION="A simple ebook reader originally intended for Elementary OS"
 HOMEPAGE="http://babluboy.github.io/bookworm"
@@ -14,11 +14,10 @@ SRC_URI="https://github.com/babluboy/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="nls"
+
 
 DEPEND="
 	>=dev-lang/vala-0.42
-	nls? ( sys-devel/gettext )
 	virtual/pkgconfig
 "
 
@@ -38,6 +37,7 @@ S="${WORKDIR}/bookworm-${PV}"
 
 src_prepare(){
 	eapply_user
+
 	vala_src_prepare --vala-api-version 0.42
 }
 
