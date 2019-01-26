@@ -11,17 +11,8 @@ inherit vala cmake-utils python-r1 gnome2
 
 DESCRIPTION="A simple ebook reader originally intended for Elementary OS"
 HOMEPAGE="http://babluboy.github.io/bookworm"
-
-if [[ ${PV} == 9999 ]];then
-	inherit git-r3
-	SRC_URI=""
-	KEYWORDS=""
-	EGIT_REPO_URI="https://github.com/babluboy/${PN}.git"
-else
-	SRC_URI="https://github.com/babluboy/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="~amd64 ~x86"
-fi
-
+SRC_URI="https://github.com/babluboy/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
+KEYWORDS="~amd64 ~x86"
 LICENSE="GPL-3"
 SLOT="0"
 IUSE=""
