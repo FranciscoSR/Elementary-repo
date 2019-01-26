@@ -15,7 +15,6 @@ SRC_URI="https://github.com/babluboy/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="nls"
 
 DEPEND="
 	${PYTHON_DEPS}
