@@ -14,18 +14,9 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND=">=dev-lang/vala-0.42"
+DEPEND=""
 
-RDEPEND="${DEPEND}
-	dev-libs/granite
-	app-text/poppler[cairo]
-	app-arch/unzip
-	app-arch/unrar
-	net-libs/webkit-gtk:4/37
-	x11-libs/gtk+:3
-	dev-db/sqlite:3
-	dev-python/html2text[${PYTHON_USEDEP}]
-"
+RDEPEND=">=dev-lang/vala-0.42"
 
 S="${WORKDIR}/bookworm-${PV}"
 
