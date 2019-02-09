@@ -25,6 +25,7 @@ full installation:
  - bluetooth the section is not checked
  - switchboard-plug-notifications the plugin is tied to the Ubuntu. ideally, it should be rewritten. It's useless now
  - switchboard-plug-useraccounts a little unfinished. it is tied to the accountsservice with patches from Debian. But these patches are not yet in gentoo.
+ - Switchboard-plug-parental-controls is not included because it needs a systemd.
 
 (Dirli's cooment: below is written by someone else, left it, suddenly someone come in handy)
  - Entries from `/usr/share/gnome/autostart` are loaded.
