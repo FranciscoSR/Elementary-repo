@@ -1,33 +1,16 @@
-Unofficial Another Elementary overlay based on the Gnome-next repository with own modifications.
-This repo 
+Another Unofficial Elementary-OS overlay based on the Gnome-next repository to work on open-rc.
 
-[![Build Status](https://travis-ci.org/Heather/gentoo-gnome.png?branch=master)](https://travis-ci.org/Heather/gentoo-gnome)
-------------------------
+**FOR PERSONAL PURPOSE
 
 Versions
 --------
 
  - Pantheon `Juno` ebuilds
 
-Communication
--------------
-
- - [![Gentoo discord server](https://img.shields.io/discord/249111029668249601.svg?style=flat-square&label=Gentoo%20Linux)](https://discord.gg/Gentoo)
- - [issues](https://github.com/Heather/gentoo-gnome/issues)
-
 Major differences with the main tree
 -------------------------
 
  - To use the latest versions of vala, mask the old vala version to see the limitations. Currently, the only way to use the new vala is to port everything to this overlay.
-
-Information
------------
- - `list.py` lists packages inside the overlay and their versions.
- - The official [gnome overlay](http://git.overlays.gentoo.org/gitweb/?p=proj/gnome.git;a=summary).
- - Contributions are welcome.
- - For bugs, use [GitHub issues](https://github.com/Heather/gentoo-gnome/issues?state=open).
- - Use `pull --rebase` to resolve conflicts or set `branch.autosetuprebase = always`.
- - [This script](https://github.com/Heather/gentoo-gnome/blob/master/compare.py) removes features implemented upstream from this overlay.
 
 Pantheon
 --------
