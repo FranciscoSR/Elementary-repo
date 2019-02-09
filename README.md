@@ -2,6 +2,8 @@ Another Unofficial Elementary-OS overlay based on the Gnome-next repository to w
 
 **FOR PERSONAL PURPOSE
 
+**To install the Pantheon desktop you need to install the dantrell-gnome-3-28 overlay repository that satisfies the dependencies of the elementarty ebuild to work without systemd.
+
 Versions
 --------
 
